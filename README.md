@@ -1,4 +1,4 @@
-# DellRailer
+# Dell... uhh thing
 Script that uses shodan to search for dell iDRAC panels and try usual passwords
 
 # Requirements
